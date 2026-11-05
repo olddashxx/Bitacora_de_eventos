@@ -1,0 +1,824 @@
+/* ==========================================================================
+   ESTILOS: PINTA REAL - TIKTOK LIVE SHOPPING & BITÁCORA JS
+   Diseño Oficial: Marcas Originales para Cuerpos Reales (La Paz, Bolivia)
+   Integración estricta de Criterio 1: Día 1 (Delegación/Keyup) y Día 2 (Formularios/Submit)
+   ========================================================================== */
+
+:root {
+  /* Paleta Oficial Pinta Real */
+  --color-primary: #0A192F;       /* Azul Marino Profundo */
+  --color-accent: #D4AF37;        /* Dorado Clásico Pinta Real */
+  --color-accent-hover: #B89628;  /* Dorado Oscuro Hover */
+  --color-bg: #FFFFFF;            /* Blanco Puro */
+  --color-bg-alt: #F7FAFC;        /* Gris Claro Fondos */
+  --color-border: #E2E8F0;        /* Borde Suave */
+  --color-text: #2D3748;          /* Texto Principal */
+  --color-text-muted: #718096;    /* Texto Secundario */
+
+  /* TikTok Live & Bitácora */
+  --live-red: #FE2C55;
+  --live-green: #10B981;
+  --live-danger: #EF4444;
+  --terminal-bg: #0A192F;
+  --terminal-text: #38BDF8;
+  --terminal-gold: #F6E05E;
+
+  /* Tipografías */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-mono: 'Consolas', 'Courier New', monospace;
+
+  /* Sombras y Bordes */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-pill: 50px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 20px rgba(10, 25, 47, 0.08);
+  --shadow-lg: 0 14px 28px rgba(10, 25, 47, 0.12);
+  --transition: all 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-alt);
+  color: var(--color-text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   1. NAVBAR OFICIAL PINTA REAL
+   ========================================================================== */
+.header-pinta {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.header-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.65rem;
+  letter-spacing: 0.5px;
+}
+
+.logo-pinta {
+  color: var(--color-primary);
+}
+
+.logo-real {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-link {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--color-accent);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.live-indicator-pill {
+  background: rgba(254, 44, 85, 0.1);
+  border: 1px solid rgba(254, 44, 85, 0.3);
+  color: var(--live-red);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: 0.5px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--live-red);
+  border-radius: 50%;
+  animation: pulse-dot 1.4s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   2. HERO BANNER OFICIAL (Captura del Usuario)
+   ========================================================================== */
+.hero-pinta {
+  position: relative;
+  min-height: 440px;
+  background-color: #0b1320;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  opacity: 0.85;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.8) 45%, rgba(255, 255, 255, 0.1) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 100%;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--color-primary);
+}
+
+.highlight-gold {
+  color: var(--color-accent);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  max-width: 580px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.btn-pinta-gold {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35);
+  transition: var(--transition);
+}
+
+.btn-pinta-gold:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.45);
+}
+
+/* ==========================================================================
+   3. SECCIÓN TIKTOK LIVE & BITÁCORA (DÍA 1 & DÍA 2)
+   ========================================================================== */
+.live-workspace {
+  max-width: 1240px;
+  margin: 40px auto 60px auto;
+  padding: 0 20px;
+}
+
+.workspace-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.workspace-badge {
+  background: var(--color-primary);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.workspace-title {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.workspace-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Grilla de 3 Columnas */
+.live-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.pinta-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+}
+
+.pinta-card:hover {
+  border-color: rgba(212, 175, 55, 0.6);
+}
+
+.pinta-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pinta-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.badge-dia {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   COLUMNA 1: DÍA 1 - STREAM EN VIVO (#liveContainer)
+   ========================================================================== */
+.stream-monitor {
+  position: relative;
+  background: #0A192F;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 16px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stream-thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.stream-top-bar {
+  position: relative;
+  z-index: 2;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, transparent 100%);
+}
+
+.streamer-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.streamer-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-primary);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+.stream-username {
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.stream-bottom-bar {
+  position: relative;
+  z-index: 2;
+  padding: 12px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 100%);
+}
+
+.btn-live-like {
+  background: var(--live-red);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.15s;
+}
+
+.btn-live-like:hover {
+  transform: scale(1.05);
+}
+
+/* Lista de Prendas en Directo (Mínimo 3) */
+.live-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.live-item-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+  transition: var(--transition);
+}
+
+.live-item-card:hover {
+  border-color: var(--color-accent);
+  background: #FFFFFF;
+}
+
+.item-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  background: #E2E8F0;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2px;
+}
+
+.item-meta {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.item-price {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.btn-item-buy {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+
+.btn-item-buy:hover {
+  background: var(--color-accent);
+  color: var(--color-primary);
+}
+
+/* Chat del Live */
+.chat-box {
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--color-border);
+}
+
+.chat-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 6px;
+}
+
+.input-pinta {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text);
+  background: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.input-pinta:focus {
+  border-color: var(--color-accent);
+}
+
+/* Estados de Validación */
+.input-pinta.is-invalid {
+  border-color: var(--live-danger) !important;
+  background-color: #FEF2F2 !important;
+  animation: shake-input 0.3s ease-in-out;
+}
+
+.input-pinta.is-valid {
+  border-color: var(--live-green) !important;
+  background-color: #F0FDF4 !important;
+}
+
+@keyframes shake-input {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+.error-feedback {
+  color: var(--live-danger);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.input-hint {
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  margin-top: 3px;
+  display: block;
+}
+
+.btn-send-chat {
+  background: var(--color-accent);
+  color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-send-chat:hover {
+  background: var(--color-accent-hover);
+}
+
+/* ==========================================================================
+   COLUMNA 2: DÍA 2 - CHECKOUT RÁPIDO & VARIANTES
+   ========================================================================== */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.select-pinta {
+  padding: 9px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  background: #FFFFFF;
+  color: var(--color-text);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.select-pinta:focus {
+  border-color: var(--color-accent);
+}
+
+.order-preview-box {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  margin: 6px 0;
+}
+
+.preview-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.btn-confirm-order {
+  background: var(--live-green);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 12px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.btn-confirm-order:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(16, 185, 129, 0.4);
+}
+
+/* ==========================================================================
+   COLUMNA 3: BITÁCORA DE AUDITORÍA EN TIEMPO REAL
+   ========================================================================== */
+.audit-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.audit-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.metric-box {
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 8px 6px;
+  text-align: center;
+}
+
+.metric-num {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  display: block;
+}
+
+.metric-name {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Consola de la Bitácora */
+.audit-terminal {
+  background: var(--terminal-bg);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  flex: 1;
+  min-height: 380px;
+  max-height: 440px;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--terminal-text);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.terminal-row {
+  padding: 4px 6px;
+  border-left: 3px solid var(--terminal-text);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 3px;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.terminal-row.row-compra {
+  border-left-color: var(--live-green);
+  color: #34D399;
+}
+
+.terminal-row.row-oferta {
+  border-left-color: var(--color-accent);
+  color: var(--terminal-gold);
+}
+
+.terminal-row.row-like {
+  border-left-color: var(--live-red);
+  color: #F472B6;
+}
+
+.terminal-row.row-error {
+  border-left-color: var(--live-danger);
+  color: #F87171;
+}
+
+.terminal-time {
+  color: #94A3B8;
+  margin-right: 4px;
+}
+
+.btn-clear-log {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-clear-log:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   4. FOOTER OFICIAL PINTA REAL
+   ========================================================================== */
+.footer-pinta {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  padding: 40px 20px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+  max-width: 1240px;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsividad */
+@media (max-width: 980px) {
+  .live-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinta Real | Marcas Originales para Cuerpos Reales — TikTok Live</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="header-pinta">
+    <div class="header-container">
+
+      <a href="#" class="logo-wrap">
+        <span class="logo-pinta">PINTA</span>
+        <span class="logo-real">REAL</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link">Inicio</a></li>
+          <li><a href="#tiktok-live" class="nav-link">Prendas en Vivo</a></li>
+          <li><a href="#checkout-section" class="nav-link">Checkout Directo</a></li>
+          <li><a href="#bitacora-section" class="nav-link active">Bitácora de Eventos</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="live-indicator-pill">
+          <span class="pulse-dot"></span>
+          <span>TIKTOK LIVE</span>
+        </div>
+
+        <div class="cart-icon-wrapper" title="Carrito de Compras">
+          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+
+    <section id="hero" class="hero-pinta">
+      <img src="assets/hero_banner_pinta_real_1775954715983.png" alt="Personas luciendo ropa de Pinta Real en La Paz"
+        class="hero-image-bg">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="highlight-gold">Marcas Originales</span><br>
+          para Cuerpos Reales
+        </h1>
+        <p class="hero-subtitle">
+          Streetwear de segunda mano seleccionado. Tallas Especiales Disponibles.
+        </p>
+        <div>
+          <a href="#tiktok-live" class="btn-pinta-gold">
+            Ver Colección de Hoy
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="tiktok-live" class="live-workspace">
+
+      <div class="workspace-header">
+        <span class="workspace-badge">UPDS 2026 • Diseño Web II • Criterio 1: JS y DOM/BOM</span>
+        <h2 class="workspace-title">🔴 Transmisión TikTok Live Shopping</h2>
+        <p class="workspace-subtitle">
+          Auditoría de eventos en tiempo real: Delegación de clics, captura de comentarios y compra directa sin recarga
+          de página.
+        </p>
+      </div>
+
+      <div class="live-grid">
+
+
+        <div class="pinta-card" id="streamCard">
+
+          <div class="pinta-card-header">
+            <h3 class="pinta-card-title">
+              <span>📱 1. Stream en Vivo</span>
+            </h3>
+            <span class="badge-dia">Día 1</span>
+          </div>
+
+
+          <div id="liveContainer" class="d-flex flex-column flex-grow-1">
+
+            <div class="stream-monitor">
+              <img src="assets/tiktok_live_1_thumbnail_1775954779747.png" alt="Live Shopping Pinta Real"
+                class="stream-thumbnail">
+
+              <div class="stream-top-bar">
+                <div class="streamer-info">
+                  <div class="streamer-avatar">PR</div>
+                  <div>
+                    <div class="stream-username">@PintaReal.bo</div>
+                    <small style="color: #38bdf8; font-size: 0.7rem;">✓ Verificado</small>
+                  </div>
+                </div>
+                <div class="live-indicator-pill"
+                  style="background: rgba(0,0,0,0.6); color: #fff; border-color: rgba(255,255,255,0.2);">
+                  <span class="pulse-dot"></span> 1.4K Vistas
+                </div>
+              </div>
+
+              <div class="stream-bottom-bar">
+                <button class="btn-live-like" data-action="like" title="Dispara el evento click delegado">
+                  ❤️ Enviar Like al Live
+                </button>
+                <small style="color: #fff; font-size: 0.72rem; text-shadow: 0 1px 2px #000;">
+                  Event Bubbling Activo
+                </small>
+              </div>
+            </div>
+
+            <div class="live-items-list" id="productsList">
+
+              <div class="live-item-card">
+                <img src="assets/product_tommy_hoodie_1775954730211.png" alt="Tommy Hoodie" class="item-thumb">
+                <div class="item-details">
+                  <div class="item-title">Tommy Hilfiger Hoodie Vintage</div>
+                  <div class="item-meta">Talla L • <span class="item-price">180 BOB</span></div>
+                </div>
+                <button class="btn-item-buy" data-prod="Tommy Hilfiger Hoodie Vintage (Talla L) - 180 BOB">
+                  Comprar
+                </button>
+              </div>
+
+              <div class="live-item-card">
+                <img src="assets/product_levis_jeans_1775954744537.png" alt="Levis Jeans" class="item-thumb">
+                <div class="item-details">
+                  <div class="item-title">Levis 501 Original Fit Denim</div>
+                  <div class="item-meta">Talla 34 • <span class="item-price">150 BOB</span></div>
+                </div>
+                <button class="btn-item-buy" data-prod="Levis 501 Original Fit Denim (Talla 34) - 150 BOB">
+                  Comprar
+                </button>
+              </div>
+
+              <div class="live-item-card">
+                <img src="assets/product_1775958327.png" alt="The North Face" class="item-thumb">
+                <div class="item-details">
+                  <div class="item-title">The North Face Fleece Jacket</div>
+                  <div class="item-meta">Talla XL • <span class="item-price">210 BOB</span></div>
+                </div>
+                <button class="btn-item-buy" data-prod="The North Face Fleece Jacket (Talla XL) - 210 BOB">
+                  Comprar
+                </button>
+              </div>
+
+              <div class="live-item-card">
+                <img src="assets/product_1777173296.png" alt="Carhartt Tee" class="item-thumb">
+                <div class="item-details">
+                  <div class="item-title">Carhartt WIP Pocket Tee</div>
+                  <div class="item-meta">Talla M • <span class="item-price">85 BOB</span></div>
+                </div>
+                <button class="btn-item-buy" data-prod="Carhartt WIP Pocket Tee (Talla M) - 85 BOB">
+                  Comprar
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="chat-box">
+            <label for="chatInput" class="chat-label">
+              💬 Chat del Live (Escribe un comentario):
+            </label>
+            <div class="chat-input-row">
+              <input type="text" id="chatInput" class="input-pinta" placeholder="Pregunta por tallas al vendedor..."
+                autocomplete="off">
+              <button id="btnSendChat" class="btn-send-chat" type="button">
+                Enviar
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="pinta-card" id="checkout-section">
+
+          <div class="pinta-card-header">
+            <h3 class="pinta-card-title">
+              <span>⚡ 2. Checkout Relámpago</span>
+            </h3>
+            <span class="badge-dia">Día 2</span>
+          </div>
+
+          <form id="orderForm" class="checkout-form">
+
+            <div class="form-group">
+              <label for="variantSelect" class="form-label">
+                Seleccionar Prenda / Variante del Live:
+              </label>
+              <select id="variantSelect" class="select-pinta">
+                <option value="Tommy Hilfiger Hoodie Vintage (Talla L) - 180 BOB">Tommy Hilfiger Hoodie Vintage (Talla
+                  L) - 180 BOB</option>
+                <option value="Levis 501 Original Fit Denim (Talla 34) - 150 BOB">Levis 501 Original Fit Denim (Talla
+                  34) - 150 BOB</option>
+                <option value="The North Face Fleece Jacket (Talla XL) - 210 BOB">The North Face Fleece Jacket (Talla
+                  XL) - 210 BOB</option>
+                <option value="Carhartt WIP Pocket Tee (Talla M) - 85 BOB">Carhartt WIP Pocket Tee (Talla M) - 85 BOB
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="userTikTok" class="form-label">
+                Nombre de Usuario (TikTok): <span style="color: #EF4444;">*</span>
+              </label>
+              <input type="text" id="userTikTok" class="input-pinta" placeholder="@usuario_live" required
+                autocomplete="off">
+              <div id="userErrorMsg" class="error-feedback" style="display: none;"></div>
+              <small class="input-hint">Obligatorio: debe iniciar con "@" (Ej: @cliente_pinta)</small>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Método de Pago:</label>
+              <select id="paymentMethod" class="select-pinta">
+                <option value="Pago QR (Bancos de Bolivia)">Pago QR Simple (BCP, BNB, Banco Unión)</option>
+                <option value="Efectivo contra entrega (La Paz)">Efectivo contra entrega (La Paz / El Alto)</option>
+                <option value="Tigo Money">Tigo Money</option>
+              </select>
+            </div>
+
+            <div class="order-preview-box">
+              <div class="preview-row">
+                <span style="color: var(--color-text-muted);">Prenda seleccionada:</span>
+                <span id="previewName" style="font-weight: 700; color: var(--color-primary);">Tommy Hoodie</span>
+              </div>
+              <div class="preview-row">
+                <span style="color: var(--color-text-muted);">Envío:</span>
+                <span style="color: var(--live-green); font-weight: 700;">Gratis en Live</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-confirm-order">
+              ⚡ Confirmar Compra en Directo
+            </button>
+          </form>
+
+        </div>
+
+        <div class="pinta-card audit-panel" id="bitacora-section">
+
+          <div class="pinta-card-header">
+            <h3 class="pinta-card-title">
+              <span>📋 3. Bitácora de Eventos</span>
+            </h3>
+            <button id="btnClearLog" class="btn-clear-log" type="button">
+              Limpiar
+            </button>
+          </div>
+
+          <div class="audit-metrics">
+            <div class="metric-box">
+              <span id="countEvents" class="metric-num">0</span>
+              <span class="metric-name">Eventos</span>
+            </div>
+            <div class="metric-box">
+              <span id="countLikes" class="metric-num" style="color: var(--live-red);">0</span>
+              <span class="metric-name">Likes</span>
+            </div>
+            <div class="metric-box">
+              <span id="countOrders" class="metric-num" style="color: var(--live-green);">0</span>
+              <span class="metric-name">Ventas</span>
+            </div>
+          </div>
+
+          <div id="logOutput" class="audit-terminal">
+            <div class="terminal-row">
+              <span class="terminal-time">[Transmisión iniciada]:</span> Escuchando interacciones del Live en directo...
+            </div>
+          </div>
+
+          <div id="logDia2" style="display: none;"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer-pinta">
+    <div class="footer-container">
+      <div>
+        <h3 style="color: #fff; font-size: 1.4rem; margin-bottom: 4px;">
+          PINTA <span style="color: var(--color-accent);">REAL</span>
+        </h3>
+        <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.75);">
+          Marcas Originales para Cuerpos Reales.
+        </p>
+        <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.5); margin-top: 4px;">
+          📍 La Paz, Bolivia — Envíos a todo el país.
+        </p>
+      </div>
+
+      <div style="text-align: right;">
+        <span style="color: var(--color-accent); font-weight: 700; font-size: 0.9rem;">
+          Gabriel Alejandro Garay Esprella (Tec. Gabriel)
+        </span>
+        <div style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.7);">
+          Diseño Web II • UPDS 2026 • Ing. Miguel Angel Cruz Ramos
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2026 Pinta Real. Desarrollado con JavaScript, DOM & Formularios en Vivo.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,8 +1,116 @@
-<!DOCTYPE HTML>
-<html>
-  <Head>
-  </Head>
-  <Body>
-    <p>Hola mundo</p>
-  </Body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuco | Sitio Oficial</title>
+</head>
+<body bgcolor = "#FDF8F0" text="2D2327" link = "#9D84B7" vlink="#9D84B7" alink="#F2A1A8">
+    <center>
+    <header>
+        <nav>
+            <a href="#hero">Inicio</a>
+            <a href="#bio">Biografía</a>
+            <a href="#discografia">Música</a>
+            <a href="#gira">Tour</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+    <hr widht = 80% size = 2 color = "9D84B7" >
+    <main>
+        <!-- Sección Principal / Portada -->
+        <section id="hero">
+            <h1>Cuco</h1>
+            <p>Nuevo álbum disponible ahora</p>
+            <a href="https://open.spotify.com">
+            <img src="https://i.scdn.co/image/ab67616d0000b273b17bfdf4350d3de7d303cc4c" border = 0>
+            </a>
+            <br>
+            <a href="#discografia">Escuchar ahora</a>
+        </section>
+
+        <!-- Biografía / Sobre el Artista -->
+        <section id="bio">
+            <h2>Acerca de</h2>
+            <article>
+                <p>Resumen biográfico del artista, orígenes, trayectoria y propuesta musical.</p>
+            </article>
+        </section>
+
+        <!-- Discografía / Lanzamientos -->
+        <section id="discografia">
+            <h2>Discografía</h2>
+            
+            <article>
+                <h3>Ridin</h3>
+                <time datetime="2026">2026</time>
+                <ul>
+                    <li>Dreamin</li>
+                    <li>Ridin</li>
+                    <li>Decir Adios</li>
+                </ul>
+                <nav aria-label="Plataformas de streaming">
+                    <a href="#">Spotify</a>
+                    <a href="#">Apple Music</a>
+                    <a href="#">YouTube</a>
+                </nav>
+            </article>
+        </section>
+
+        <!-- Fechas de Conciertos / Tour -->
+        <section id="gira">
+            <h2>Próximas Fechas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Ciudad</th>
+                        <th>Lugar</th>
+                        <th>Entradas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><time datetime="2026-12-15">15 Dic 2026</time></td>
+                        <td>Ciudad, País</td>
+                        <td>Estadio / Teatro</td>
+                        <td><a href="#">Comprar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Galería Multimedia -->
+        <section id="galeria">
+            <h2>Galería</h2>
+            <figure>
+                <img src="https://kcr.sdsu.edu/wordpress/wp-content/uploads/f2.jpg" widht = "300" alt="Concierto en vivo">
+                <figcaption>En vivo en el tour mundial</figcaption>
+            </figure>
+        </section>
+
+        <!-- Newsletter / Contacto -->
+        <section id="contacto">
+            <h2>Contacto & Suscripción</h2>
+            <form action="#" method="post">
+                <label for="email">Únete a la lista de correo:</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                <button type="submit">Suscribirme</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Nombre del Artista. Todos los derechos reservados.</p>
+        <nav aria-label="Redes sociales">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter/X</a>
+            <a href="#">TikTok</a>
+            <a href="#">YouTube</a>
+        </nav>
+    </footer>
+    </center>
+</body>
 </html>
